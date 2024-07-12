@@ -1,0 +1,15 @@
+version: '3.7'
+services:
+  spark:
+    build: .
+    container_name: spark_container
+    volumes:
+      - C:\Users\123\Desktop\spark_app:/app
+      - C:\Users\123\Desktop\spark_app\data\input:/data/input
+      - C:\Users\123\Desktop\spark_app\data\output:/data/output
+      - C:\Users\123\Desktop\spark_app\data\logs:/data/logs
+    environment:
+      - SPARK_HOME=/opt/spark
+      - HIVE_HOME=/opt/hive
+    restart: no
+    tty: true
